@@ -4,8 +4,8 @@
  * <p>
  * This file is part of mce-dev
  * <p>
- * Copyright © 2004-2011 Nokia Corporation and/or its subsidiary(-ies).
- * Copyright (C) 2013-2019 Jolla Ltd.
+ * Copyright (c) 2004 - 2011 Nokia Corporation and/or its subsidiary(-ies).
+ * Copyright (c) 2013 - 2022 Jolla Ltd.
  * Copyright (c) 2019 Open Mobile Platform LLC.
  * <p>
  * @author David Weinehall <david.weinehall@nokia.com>
@@ -919,7 +919,82 @@
  */
 # define MCE_CHARGER_TYPE_SIG             "charger_type_ind"
 
+/** Query current charging hysteresis state
+ *
+ * @since mce 1.110.0
+ *
+ * @return string: charging hysteresis policy state, one of:
+ * - #MCE_CHARGING_STATE_UNKNOWN
+ * - #MCE_CHARGING_STATE_ENABLED
+ * - #MCE_CHARGING_STATE_DISABLED
+ */
+# define MCE_CHARGING_STATE_GET           "get_charging_state"
+
+/** Signal that indicates that charging hysteresis state has changed
+ *
+ * Charging hysteresis policy decision.
+ *
+ * @since mce 1.110.0
+ *
+ * @param string: charging hysteresis policy state, one of:
+ * - #MCE_CHARGING_STATE_UNKNOWN
+ * - #MCE_CHARGING_STATE_ENABLED
+ * - #MCE_CHARGING_STATE_DISABLED
+ */
+# define MCE_CHARGING_STATE_SIG           "charging_state_ind"
+
+/** Query charge-once-to-full policy override state
+ *
+ * @since mce 1.112.0
+ *
+ * @return string: charge-once-to-full policy override state, one of:
+ * - #MCE_FORCED_CHARGING_UNKNOWN
+ * - #MCE_FORCED_CHARGING_ENABLED
+ * - #MCE_FORCED_CHARGING_DISABLED
+ */
+# define MCE_FORCED_CHARGING_GET           "get_forced_charging"
+
+/** Request charge-once-to-full policy override state change
+ *
+ * @since mce 1.112.0
+ * 
+ * @note Override is automatically disabled if / when
+ *       battery is full or charger is disconnected.
+ *
+ * @param value string: override state, one of:
+ * - #MCE_FORCED_CHARGING_ENABLED
+ * - #MCE_FORCED_CHARGING_DISABLED
+ */
+# define MCE_FORCED_CHARGING_REQ           "req_forced_charging"
+
+/** Signal that indicates that charge-once-to-full policy override state has changed
+ *
+ * Charge-once-to-full policy override decision.
+ *
+ * @since mce 1.112.0
+ *
+ * @param string: charge-once-to-full policy state, one of:
+ * - #MCE_FORCED_CHARGING_UNKNOWN
+ * - #MCE_FORCED_CHARGING_ENABLED
+ * - #MCE_FORCED_CHARGING_DISABLED
+ */
+# define MCE_FORCED_CHARGING_SIG           "forced_charging_ind"
+
+/** Query whether charging can be suspended on this device
+ *
+ * @since mce 1.113.0
+ *
+ * @note As this is a matter of static configuration, the value
+ *       returned does not change during mce runtime and thus
+ *       there is related change signal.
+ *
+ * @return boolean: true if mce can be enable/disable charging, or
+ *                  false if not
+ */
+# define MCE_CHARGING_SUSPENDABLE_GET      "get_charging_suspendable"
+
 /*@}*/
+
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -1150,6 +1225,44 @@
  * - #MCE_HARDWARE_KEYBOARD_NOT_AVAILABLE
  */
 # define MCE_HARDWARE_KEYBOARD_STATE_SIG   "keyboard_available_state_ind"
+
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Hardware Mouse Availability
+ *
+ *@{
+ */
+
+/** Query HW mouse availability
+ *
+ * @since mce 1.109.0
+ *
+ * Mouse present
+ *
+ * Used for example in evaluating whether mouse pointer
+ * should be shown or not.
+ *
+ * @return string: availability state, one of:
+ * - #MCE_HARDWARE_MOUSE_UNDEF
+ * - #MCE_HARDWARE_MOUSE_AVAILABLE
+ * - #MCE_HARDWARE_MOUSE_NOT_AVAILABLE
+ */
+# define MCE_HARDWARE_MOUSE_STATE_GET      "mouse_available_state_req"
+
+/** Notify changes in HW mouse availability
+ *
+ * @since mce 1.109.0
+ *
+ * Mouse present
+ *
+ * @return string: availability state, one of:
+ * - #MCE_HARDWARE_MOUSE_UNDEF
+ * - #MCE_HARDWARE_MOUSE_AVAILABLE
+ * - #MCE_HARDWARE_MOUSE_NOT_AVAILABLE
+ */
+# define MCE_HARDWARE_MOUSE_STATE_SIG      "mouse_available_state_ind"
 
 /*@}*/
 

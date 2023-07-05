@@ -4,8 +4,8 @@
  * <p>
  * This file is part of mce-dev
  * <p>
- * Copyright © 2004-2011 Nokia Corporation and/or its subsidiary(-ies).
- * Copyright (C) 2012-2019 Jolla Ltd.
+ * Copyright (c) 2004 - 2011 Nokia Corporation and/or its subsidiary(-ies).
+ * Copyright (c) 2012 - 2022 Jolla Ltd.
  * Copyright (c) 2019 Open Mobile Platform LLC.
  * <p>
  * @author David Weinehall <david.weinehall@nokia.com>
@@ -484,6 +484,58 @@
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/** @name Charging Hysteresis State Constants
+ *
+ *@{
+ */
+
+/** Charging hysteresis policy state is not known
+ *
+ * @since mce 1.110.0
+ */
+# define MCE_CHARGING_STATE_UNKNOWN              "unknown"
+
+/** Charging hysteresis policy allows charging
+ *
+ * @since mce 1.110.0
+ */
+# define MCE_CHARGING_STATE_ENABLED              "enabled"
+
+/** Charging hysteresis policy denies charging
+ *
+ * @since mce 1.110.0
+ */
+# define MCE_CHARGING_STATE_DISABLED             "disabled"
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Charge-once-to-full policy override constants
+ *
+ *@{
+ */
+
+/** Charge-once-to-full policy override state is not known
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_FORCED_CHARGING_UNKNOWN              "unknown"
+
+/** Charge-once-to-full policy override has been activated
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_FORCED_CHARGING_ENABLED              "enabled"
+
+/** Charge-once-to-full policy override has been deactivated
+ *
+ * @since mce 1.112.0
+ */
+# define MCE_FORCED_CHARGING_DISABLED             "disabled"
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 /** @name Battery Status Constants
  *
  * These values match legacy maemo (bme) battery status values.
@@ -632,6 +684,32 @@
  * @since mce 1.39.0
  */
 # define MCE_HARDWARE_KEYBOARD_NOT_AVAILABLE     "not-available"
+/*@}*/
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/** @name Hardware Mouse Availability Constants
+ *
+ *@{
+ */
+
+/** Hardware Mouse availability is not known
+ *
+ * @since mce 1.109.0
+ */
+# define MCE_HARDWARE_MOUSE_UNDEF                "undef"
+
+/** Hardware Mouse is available
+ *
+ * @since mce 1.109.0
+ */
+# define MCE_HARDWARE_MOUSE_AVAILABLE            "available"
+
+/** Hardware Mouse is not available
+ *
+ * @since mce 1.109.0
+ */
+# define MCE_HARDWARE_MOUSE_NOT_AVAILABLE        "not-available"
 /*@}*/
 
 /////////////////////////////////////////////////////////////////////////////

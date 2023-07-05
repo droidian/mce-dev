@@ -1,3 +1,27 @@
+mce-dev (1.32.0) unstable; urgency=low
+
+  * [mce] Add charging suspendable dbus constant. JB#59152
+
+ -- Simo Piiroinen <simo.piiroinen@jolla.com>  Tue, 22 Nov 2022 14:22:52 +0200
+
+mce-dev (1.31.0) unstable; urgency=low
+
+  * [mce] Add forced charging D-Bus constants. JB#58372
+
+ -- Simo Piiroinen <simo.piiroinen@jolla.com>  Tue, 18 Oct 2022 10:47:06 +0300
+
+mce-dev (1.30.0) unstable; urgency=low
+
+  * [mce] Add charging hysteresis state D-Bus constants. JB#40062
+
+ -- Simo Piiroinen <simo.piiroinen@jolla.com>  Tue, 22 Feb 2022 04:19:53 +0200
+
+mce-dev (1.29.0) unstable; urgency=low
+
+  * [mce] Add mouse availability state D-Bus constants. JB#55866
+
+ -- Simo Piiroinen <simo.piiroinen@jolla.com>  Mon, 25 Oct 2021 18:09:15 +0300
+
 mce-dev (1.28.3) unstable; urgency=low
 
   * [mce-dev] Set rpm build arch to noarch
